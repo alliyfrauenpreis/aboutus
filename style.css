@@ -2,8 +2,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	overflow: hidden;
 }
+
 .pane {
-	border: 1px solid grey;
 	width: 29.5%;
 	height: 400px;
 	font-size: 22px;
@@ -13,6 +13,25 @@ body {
 	display: inline-block
 }
 
+#pane1 {
+
+
+	border: 1px solid rgb(251,106,102,0.3);
+
+}
+
+#pane2 {
+
+	border: 1px solid rgb(251,106,102,0.6);
+
+}
+
+#pane3 {
+
+	border: 1px solid rgb(251,106,102,0.9);
+
+}
+
 #thumbnails-container {
 	display: flex;
 	flex-direction: row;
@@ -20,11 +39,6 @@ body {
 	bottom: 0px;
 	width: 100%;
 	justify-content: space-between;
-}
-
-#thumbnails-container:after {
-	content: "";
-	flex: auto;
 }
 
 #thumbnails-container .thumbnail {
@@ -42,13 +56,15 @@ body {
 
 
 .thumbnail {
-	background-image: url(./assets/avatar.png);
+	background-image: url(./assets/one.png);
 	background-size: 100px 100px;
 	width: 100px;
 	height: 100px;
 	margin: 10px 10px;
 }
 
+.thumbnail:nth-of-type(2){
+}
 
 .thumbnail-placeholder {
 	background-size: 100px 100px;
@@ -63,11 +79,11 @@ body {
 	width: 150px;
 	height: 150px;
 	float: left;
-	margin: 0px 20px 0px 0px;
+	margin: 0px 20px 0px 10px;
 }
 
 .thumbnail-movable {
-	background-image: url(./assets/avatar.png);
+	background-image: url(./assets/one.png);
 	background-size: 150px 150px;
 	width: 150px;
 	height: 150px;
