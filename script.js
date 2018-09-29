@@ -2,20 +2,25 @@ $(document).ready(function(){
 
 	var permitted = true;
 
-	$('#thumbnails-container .thumbnail').click(function(){
+	$('#thumbnails-container .thumbnail').click(startAnims);
+
+
+	function startAnims(){
+
+		console.log($(this));
+
 		if (permitted) {
 			permitted = false;
 			animateNewThumbnail($(this));
 			slidePanes();
 		}
-
-	});
+	}
 
 	function animateNewThumbnail(thumbnail){
 
-		var position = $('#panes-container #pane1 #thumb1').position();
-		var width = $('#panes-container #pane1 #thumb1').width();
-		var height = $('#panes-container #pane1 #thumb1').height();
+		var position = $('#pane1 #thumb1').position();
+		var width = $('#pane1 #thumb1').width();
+		var height = $('#pane1 #thumb1').height();
 
 		// Add placeholder
 
@@ -46,7 +51,6 @@ $(document).ready(function(){
 
 
 		// Animate panel 3's thumbnail down
-		console.log("thumb 3 is ");
 
 		$('#thumb3-placeholder').css({
 			position: 'absolute',
@@ -65,8 +69,10 @@ $(document).ready(function(){
 			opacity: 1,
 			'margin-right': 0
 
-		}, 300, function (){
+		}, 700, function (){
 
+			$('#thumbnails-container').prepend($('#thumb3-placeholder'));
+			$('#thumb3-placeholder').click(startAnims);
 			$('#thumb3-placeholder').attr('class', 'thumbnail');
 			$('#thumb3-placeholder').attr('id', '');
 
@@ -109,7 +115,7 @@ $(document).ready(function(){
 	}
 
 	function addNewPane(){
-		$('#panes-container').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description for pane1.</div></div>');
+		$('body').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description for pane1.</div></div><div class="thumbnail-movable" id="thumb1-placeholder"></div>');
 		$('#pane1').animate({
 			opacity: '1'
 		}, 100, function(){

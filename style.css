@@ -2,13 +2,6 @@ body {
 	background: #eee;
 	font-family: 'Montserrat', sans-serif;
 }
-
-#panes-container {
-	width: 100%;
-	height: 600px;
-	margin: 0 auto;
-}
-
 .pane {
 	border: 1px solid grey;
 	width: 28%;
@@ -52,10 +45,8 @@ body {
 	width: 100px;
 	height: 100px;
 	margin: 10px 10px;
-	border: 1px solid green;
 	display: none;
 }
-
 
 .pane .thumbnail {
 	background-size: 150px 150px;
@@ -66,7 +57,7 @@ body {
 }
 
 
-.thumbnail-placeholder-upper {
+.thumbnail-movable {
 	background-image: url(./assets/avatar.png);
 	background-size: 150px 150px;
 	width: 150px;
