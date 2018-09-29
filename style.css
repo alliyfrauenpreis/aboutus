@@ -1,5 +1,6 @@
 body {
 	background: #eee;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .panes-container {
@@ -14,6 +15,8 @@ body {
 	border: 1px solid grey;
 	width: 30%;
 	height: 550px;
+	font-size: 22px;
+	padding: 40px 0px 0px 20px;
 }
 
 .thumbnails-container {
@@ -37,4 +40,15 @@ body {
 	width: 100px;
 	height: 100px;
 	margin: 10px 10px;
+}
+
+.pane .thumbnail {
+	background-size: 150px 150px;
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin: 0px 20px 0px 0px;
+}
+
+.pane .description {
 }
