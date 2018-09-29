@@ -1,14 +1,14 @@
 body {
-	background: #eee;
 	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
 }
 .pane {
 	border: 1px solid grey;
-	width: 28%;
-	height: 550px;
+	width: 29.5%;
+	height: 400px;
 	font-size: 22px;
-	padding: 40px 0px 0px 20px;
-	margin: 0px 15px;
+	padding: 40px 0px 0px 10px;
+	margin: 0px 10px 40px 10px;
 	position: relative;
 	display: inline-block
 }
@@ -27,10 +27,19 @@ body {
 	flex: auto;
 }
 
-
 #thumbnails-container .thumbnail {
 	cursor: pointer;
+	transition: all .2s ease;
+ 	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+
 }
+
+#thumbnails-container .thumbnail:hover {
+	transform: scale(1.1);
+}
+
 
 .thumbnail {
 	background-image: url(./assets/avatar.png);
@@ -39,6 +48,7 @@ body {
 	height: 100px;
 	margin: 10px 10px;
 }
+
 
 .thumbnail-placeholder {
 	background-size: 100px 100px;
@@ -55,7 +65,6 @@ body {
 	float: left;
 	margin: 0px 20px 0px 0px;
 }
-
 
 .thumbnail-movable {
 	background-image: url(./assets/avatar.png);
