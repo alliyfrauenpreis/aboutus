@@ -1,0 +1,40 @@
+body {
+	background: #eee;
+}
+
+.panes-container {
+	width: 100%;
+	height: 600px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.pane {
+	border: 1px solid grey;
+	width: 30%;
+	height: 550px;
+}
+
+.thumbnails-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	bottom: 0px;
+	position: relative;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.thumbnails-container:after {
+	content: "";
+	flex: auto;
+}
+
+.thumbnail {
+	background-image: url(./assets/avatar.png);
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+	margin: 10px 10px;
+}
