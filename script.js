@@ -126,7 +126,7 @@ $(document).ready(function(){
 		var image = $('.thumbnail.active').css('background-image');
 		console.log(image);
 
-		$('body').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description.</div></div><div class="thumbnail-movable" id="thumb1-placeholder"></div>');
+		$('body').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description of a lovely person.</div></div><div class="thumbnail-movable" id="thumb1-placeholder"></div>');
 		$('#pane1').animate({
 			opacity: 1
 		}, 200, function(){

@@ -10,27 +10,37 @@ body {
 	padding: 40px 0px 0px 10px;
 	margin: 0px 10px 40px 10px;
 	position: relative;
-	display: inline-block
+	display: inline-block;
+	transition: border .2s ease;
+ 	-webkit-transition: border .2s ease;
+	-moz-transition: border .2s ease;
+	-o-transition: border .2s ease;
 }
 
 #pane1 {
-
-
 	border: 1px solid rgb(251,106,102,0.3);
+}
 
+#pane1:hover {
+	border: 1px solid rgb(251,106,102,1);
 }
 
 #pane2 {
-
 	border: 1px solid rgb(251,106,102,0.6);
+}
 
+#pane2:hover {
+	border: 1px solid rgb(251,106,102,1);
 }
 
 #pane3 {
-
 	border: 1px solid rgb(251,106,102,0.9);
-
 }
+
+#pane3:hover {
+	border: 1px solid rgb(251,106,102,1);
+}
+
 
 #thumbnails-container {
 	display: flex;
@@ -47,7 +57,6 @@ body {
  	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
 	-o-transition: all .2s ease;
-
 }
 
 #thumbnails-container .thumbnail:hover {
