@@ -15,7 +15,7 @@ body {
 	height: 550px;
 	font-size: 22px;
 	padding: 40px 0px 0px 20px;
-	margin: 0px 10px;
+	margin: 0px 15px;
 	position: relative;
 	display: inline-block
 }
@@ -25,7 +25,6 @@ body {
 	flex-direction: row;
 	flex-wrap: wrap;
 	bottom: 0px;
-	position: relative;
 	width: 100%;
 	justify-content: space-between;
 }
@@ -48,10 +47,31 @@ body {
 	margin: 10px 10px;
 }
 
+.thumbnail-placeholder {
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+	margin: 10px 10px;
+	border: 1px solid green;
+	display: none;
+}
+
+
 .pane .thumbnail {
 	background-size: 150px 150px;
 	width: 150px;
 	height: 150px;
 	float: left;
 	margin: 0px 20px 0px 0px;
+}
+
+
+.pane .thumbnail-placeholder {
+	background-image: url(./assets/avatar.png);
+	background-size: 150px 150px;
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin: 0px 20px 0px 0px;
+	display: none;
 }

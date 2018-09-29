@@ -9,12 +9,46 @@ $(document).ready(function(){
 	function animateNewThumbnail(thumbnail){
 
 		var position = $('#panes-container #pane1 #thumb1').position();
-		console.log(position.top);
-		console.log($(thumbnail));
+		var width = $('#panes-container #pane1 #thumb1').width();
+		var height = $('#panes-container #pane1 #thumb1').height();
 
-		$(thumbnail).eq(0).animate({
-			opacity: '0.5'
-		}, 1000);
+		console.log(position);
+		// Add placeholder
+
+		var currentPos = $(thumbnail).position();
+		var placeholder = $(thumbnail).next();
+		console.log(currentPos);
+
+		$(thumbnail).css({
+			position: 'absolute',
+			top: currentPos.top,
+			left: currentPos.left
+		});
+
+		$(thumbnail).animate({
+			top: position.top - 2,
+			left: position.left + 13,
+			width: width,
+			height: height,
+			'background-size': width
+
+		}, 700, function(){
+			$(thumbnail).fadeOut();
+		});
+
+		$(placeholder).show();
+
+
+		// Animate panel 3's thumbnail down
+		$('#thumb3-placeholder').css({
+			position: 'absolute'
+		});
+		$('#thumb3-placeholder').show();
+
+
+		$('#thumb3-placeholder').animate({
+			bottom: 0
+		}, 100);
 
 	}
 
@@ -28,27 +62,35 @@ $(document).ready(function(){
 		});
 
 		$('#pane1').delay(delay).animate({
-			'margin-left': '+=350px'
+			'margin-left': '+=450px'
 		}, 500, function(){
 
 			$('#pane2').attr('id', 'pane3');
+			$('#thumb2').attr('id', 'thumb3');
 			$('#pane1').attr('id', 'pane2');
+			$('#thumb1').attr('id', 'thumb2');
 			addNewPane();
 
-			// $('#pane2').animate({
-			// 	'margin-left': '15px'
-			// }, 0);
+			$('#pane2').animate({
+				'margin-left': '15px'
+			}, 0);
 
-			// $('#pane3').animate({
-			// 	'margin-left': '15px'
-			// }, 0);
+			$('#pane3').animate({
+				'margin-left': '15px'
+			}, 0);
 		});
 	}
 
 
 
 	function addNewPane(){
-		// $('#panes-container').prepend('<div class="pane" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description for pane1.</div></div>');
+
+
+		$('#panes-container').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description for pane1.</div></div>');
+		
+		$('#pane1').animate({
+			opacity: '1'
+		}, 100);
 	}
 
 });
