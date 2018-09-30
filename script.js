@@ -55,7 +55,7 @@ $(document).ready(function(){
 		$('#thumb3-placeholder').animate({
 			top: currentPos.top + (currentMargin/2),
 			left: currentPos.left + (currentMargin/2),
-			'margin': '5px 5px',
+			'margin': '10px 10px',
 			width: currentWidth,
 			height: currentHeight,
 			'background-size': currentWidth,
@@ -71,7 +71,6 @@ $(document).ready(function(){
 			$('#thumb3-placeholder').attr('class', 'thumbnail');
 			$('#thumb3-placeholder').attr('id', '');
 		});
-
 	}
 
 	// Move panes 1 & 2 over and turn them into the new panes 2 & 3.
