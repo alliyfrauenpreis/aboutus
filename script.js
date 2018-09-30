@@ -1,27 +1,26 @@
 $(document).ready(function(){
 
-	var permitted = true;
+	var animating = false;
 
 	$('#thumbnails-container .thumbnail').click(startAnims);
 
+	// Start the animation process
 	function startAnims(){
 
-		if (permitted) {
-			permitted = false;
+		if (!animating) {
+			animating = true;
 			animateNewThumbnail($(this));
 			slidePanes();
 		}
 	}
 
+	// Move thumbnails to new pane1, and from pane3 to thumbnail container
 	function animateNewThumbnail(thumbnail){
 
 		$(thumbnail).addClass('active');
 		var position = $('#pane1 #thumb1').position();
-		console.log($('#pane1 #thumb1').offset());
 		var width = $('#pane1 #thumb1').width();
 		var height = $('#pane1 #thumb1').height();
-
-		// Add placeholder
 		var currentPos = $(thumbnail).position();
 		var currentWidth = $(thumbnail).width();
 		var currentHeight = $(thumbnail).height();
@@ -44,7 +43,7 @@ $(document).ready(function(){
 			'background-size': width
 		}, 700);
 
-		// Animate panel 3's thumbnail down
+		// Animate pane 3's thumbnail down
 		$('#thumb3-placeholder').css({
 			position: 'absolute',
 			top: $('#thumb3').position().top + $('#thumb3').offset().top,
@@ -75,9 +74,10 @@ $(document).ready(function(){
 
 	}
 
+	// Move panes 1 & 2 over and turn them into the new panes 2 & 3.
 	function slidePanes(){
 
-		// Decide where panel2 should end up
+		// Decide where pane2 should end up
 		var leftOffset = $('#pane2').offset().left - $('#pane1').offset().left;
 		var delay = 200;
 
@@ -124,18 +124,21 @@ $(document).ready(function(){
 	function addNewPane(){
 
 		var image = $('.thumbnail.active').css('background-image');
-		console.log(image);
 
 		$('body').prepend('<div class="pane" style="opacity: 0" id="pane1"><div class="thumbnail" id="thumb1"></div><div class="description">Here is a description of a lovely person.</div></div><div class="thumbnail-movable" id="thumb1-placeholder"></div>');
 		$('#pane1').animate({
 			opacity: 1
 		}, 200, function(){
+
+			// Ensure properties are organized and images are correctly set
 			$('#pane1').css('opacity','');
 			$('#thumb1').css('background-image', image);
 			$('#thumb1-placeholder').css('background-image', image);
 
-			permitted = true;
+			// Remove old thumbnail
 			$('.thumbnail.active').remove();
+
+			animating = false;
 		});
 	}
 
