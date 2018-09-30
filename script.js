@@ -50,12 +50,13 @@ $(document).ready(function(){
 			top: $('#thumb3').position().top + $('#thumb3').offset().top,
 			left: $('#thumb3').position().left + $('#thumb3').offset().left
 		});
+
 		$('#thumb3-placeholder').show();
 
 		$('#thumb3-placeholder').animate({
 			top: currentPos.top + (currentMargin/2),
 			left: currentPos.left + (currentMargin/2),
-			'margin': '10px 10px',
+			'margin': '5px 5px',
 			width: currentWidth,
 			height: currentHeight,
 			'background-size': currentWidth,
@@ -70,7 +71,6 @@ $(document).ready(function(){
 			$('#thumb3-placeholder').click(startAnims);
 			$('#thumb3-placeholder').attr('class', 'thumbnail');
 			$('#thumb3-placeholder').attr('id', '');
-
 		});
 
 	}

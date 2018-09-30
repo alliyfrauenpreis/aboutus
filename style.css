@@ -3,6 +3,14 @@ body {
 	overflow: hidden;
 }
 
+h1 {
+	text-align: center;
+	border-bottom: 1px solid grey;
+	width: 400px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
 .pane {
 	width: 29.5%;
 	height: 400px;
@@ -19,6 +27,7 @@ body {
 
 #pane1 {
 	border: 1px solid rgb(251,106,102,0.3);
+	
 }
 
 #pane1:hover {
